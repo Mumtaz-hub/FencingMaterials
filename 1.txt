@@ -1,0 +1,12 @@
+ object TotalAmt = DT.Compute("Sum(ExclusiveAmount)", string.Empty);
+                    txtTotalAmt.Text = TotalAmt.ToString();
+
+                    
+                    object VATAmt = DT.Compute("Sum(VATAmount)", string.Empty);
+                    txtVATAmt.Text = VATAmt.ToString();
+
+                    object DiscAmt = DT.Compute("Sum(DiscAmount)", string.Empty);
+                    txtDiscountAmt.Text = DiscAmt.ToString();
+
+                    object NetAmt = Convert.ToDecimal(TotalAmt) + Convert.ToDecimal(VATAmt) - Convert.ToDecimal(DiscAmt);
+                    txtNetAmt.Text = NetAmt.ToString();
